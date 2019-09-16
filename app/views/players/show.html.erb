@@ -10,5 +10,15 @@
   <%= @player.score %>
 </p>
 
+<p>
+  <strong>Outcome:</strong>
+  <% if @player.outcome == true%>
+  <strong>Last Wiiner</strong>
+  <%end%>
+  <% if @player.outcome == false%>
+  <strong>Last Loser</strong>
+  <%end%>
+</p>
+
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

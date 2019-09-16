@@ -16,6 +16,12 @@
       <tr>
         <td><%= player.name %></td>
         <td><%= player.score %></td>
+        <% if (player.outcome == false) %>
+        <td><%=image_tag("Lemon.jpg", alt: "Loser Lemon",:size => "100x60") %></td>
+        <% end %>
+        <% if (player.outcome == true) %>
+        <td><%=image_tag("winner.jpg", alt: "Winner",:size => "100x60") %></td>
+        <% end %>
         <td><%= link_to 'Show', player %></td>
         <td><%= link_to 'Edit', edit_player_path(player) %></td>
         <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
