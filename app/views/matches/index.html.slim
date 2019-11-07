@@ -1,15 +1,19 @@
-h1 All Matches
-table
-  tr
-    th
-      b Players
-    th
-      b Winner
-    th
-      b Date
-    -@matches.each do |match|
-      tr
-        td =link_to "#{Player.find(match.player_1_id).name} VS #{Player.find(match.player_2_id).name}", match_path(match)
-        td = "#{Player.find(match.winner_id).name}"
-        td = match.created_at
+-if @matches.present?
+  h1 All Matches
+  table
+    tr
+      th
+        b Players
+      th
+        b Winner
+      th
+        b Date
+      -@matches.each do |match|
+        tr
+          td =link_to "#{Player.find(match.player_1_id).name} VS #{Player.find(match.player_2_id).name}", match_path(match)
+          td = "#{Player.find(match.winner_id).name}"
+          td = match.created_at
+
+-else
+  h1 There are no Matches
 =link_to "Back", players_path
