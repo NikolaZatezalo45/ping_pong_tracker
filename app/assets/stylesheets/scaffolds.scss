@@ -25,7 +25,7 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: rgb(0, 0, 0);
   }
 
   &:hover {
@@ -84,4 +84,8 @@ div {
 
 label {
   display: block;
+}
+.container {
+  margin: auto;
+  max-width: 90%;
 }
