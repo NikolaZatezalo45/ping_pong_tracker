@@ -13,9 +13,9 @@ table
 br
 .actions
   = button_to( "Create Match", new_match_path, :method => :get)
-  br
-  = link_to 'New Player', new_player_path
-  br
-  = link_to 'Edit profile', edit_user_registration_path
-  br
-  =link_to 'Sign out', destroy_user_session_path, method: :delete
+  = button_to( "New Player", new_player_path, :method => :get)
+  = button_to( "All Matches", matches_path, :method => :get)
+
+= link_to 'Edit profile', edit_user_registration_path
+br
+=link_to 'Sign out', destroy_user_session_path, method: :delete

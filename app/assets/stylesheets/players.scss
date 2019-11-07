@@ -11,9 +11,12 @@ tr {
 }
 
 .actions {
+  display: flex;
+
   input {
-    display: block;
-    width: 25%;
+    display: flex;
+    // width: 25%;
+    margin: 1rem;
     border: 1px solid #000000;
     background-color: whitesmoke;
     padding: 14px 28px;

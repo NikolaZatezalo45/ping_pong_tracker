@@ -1,2 +1,15 @@
-.actions
-  h1 = button_to( "Take Me Home", players_path, :method => :get)
+h1 All Matches
+table
+  tr
+    th
+      b Players
+    th
+      b Winner
+    th
+      b Date
+    -@matches.each do |match|
+      tr
+        td =link_to "#{Player.find(match.player_1_id).name} VS #{Player.find(match.player_2_id).name}", match_path(match)
+        td = "#{Player.find(match.winner_id).name}"
+        td = match.created_at
+=link_to "Back", players_path
