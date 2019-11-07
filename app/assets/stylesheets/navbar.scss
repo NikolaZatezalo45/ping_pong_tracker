@@ -1,0 +1,30 @@
+.nav-container {
+  background-color: #9ca5a3;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+}
+ul li {
+  list-style: none;
+  padding-right: 1rem;
+  color: aqua;
+}
+
+.balance {
+  display: flex;
+  padding-top: 1rem;
+  padding-right: 2rem;
+}
+
+.navigation {
+  display: flex;
+  padding-top: 1rem;
+  padding-right: 2rem;
+
+  li {
+    margin-right: 1rem;
+  }
+}
