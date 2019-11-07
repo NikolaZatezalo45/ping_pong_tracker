@@ -1,3 +1,25 @@
 // Place all the styles related to the players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+th {
+  color: #000000;
+  text-align: center;
+  font-size: 25px;
+}
+tr {
+  text-align: center;
+}
+
+.actions {
+  input {
+    display: block;
+    width: 25%;
+    border: 1px solid #000000;
+    background-color: whitesmoke;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+  }
+}

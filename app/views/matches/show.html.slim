@@ -1,0 +1,13 @@
+h2 Match Details
+h3  ="Player 1 : #{@match.player_1.name}"
+h3  ="Player 2 : #{@match.player_2.name}"
+h3 ="Score : #{@match.player_1_score} - #{@match.player_2_score}"
+h3 ="Winner : #{@match.winner.name}"
+
+.actions
+  h3 = button_to( "Home", players_path, :method => :get)
+
+
+
+
+

@@ -1,0 +1,24 @@
+h2 Create Match
+= form_with model: @match, local: true do |f|
+    - if @match.errors.any?
+        h3
+            => pluralize(@match.errors.count, "error") 
+            b prohibited this match from being saved:
+            ul
+            - @match.errors.full_messages.each do |message|
+                li = message
+    = f.label :'Player_1'
+    = f.select(:player_1_id, Player.pluck(:name, :id))
+    br
+    = f.label :'Player_2'
+    = f.select(:player_2_id, Player.pluck(:name, :id))
+    br
+    = f.label :'Player_1 score'
+    = f.number_field :player_1_score 
+    br
+    = f.label :'Player_2 score'
+    = f.number_field :player_2_score 
+    br
+    .actions    
+        = f.submit "Create Match"
+=link_to 'Back', players_path

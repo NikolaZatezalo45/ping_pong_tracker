@@ -16,16 +16,6 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :score %>
-    <%= form.number_field :score %>
-  </div>
-
-  <div class="field">
-    <%=form.select :outcome, options_for_select([['Winner', true], ['Loser', false]])%>
-  </div>
-
-
   <div class="actions">
     <%= form.submit %>
   </div>

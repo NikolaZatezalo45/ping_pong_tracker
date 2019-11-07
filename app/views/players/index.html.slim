@@ -1,0 +1,21 @@
+
+h1 Players
+table
+    tr
+      th
+        b Name
+      th
+        b Score
+    - @players.each do |player|
+      tr
+        td = link_to player.name, player_matches_index_path(player)
+        td = player.score
+br
+.actions
+  = button_to( "Create Match", new_match_path, :method => :get)
+  br
+  = link_to 'New Player', new_player_path
+  br
+  = link_to 'Edit profile', edit_user_registration_path
+  br
+  =link_to 'Sign out', destroy_user_session_path, method: :delete

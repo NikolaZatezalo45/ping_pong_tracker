@@ -10,17 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_115305) do
+ActiveRecord::Schema.define(version: 2019_11_06_140459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "player_1_id"
+    t.bigint "player_2_id"
+    t.integer "player_1_score"
+    t.integer "player_2_score"
+    t.bigint "winner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_1_id"], name: "index_matches_on_player_1_id"
+    t.index ["player_2_id"], name: "index_matches_on_player_2_id"
+    t.index ["winner_id"], name: "index_matches_on_winner_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "outcome"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +49,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_115305) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "players", column: "player_1_id"
+  add_foreign_key "matches", "players", column: "player_2_id"
+  add_foreign_key "matches", "players", column: "winner_id"
 end
