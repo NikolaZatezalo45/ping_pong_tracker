@@ -6,7 +6,7 @@ h2 Create Match
             b prohibited this match from being saved:
             ul
             - @match.errors.full_messages.each do |message|
-                li = message
+                li = message.gsub("Player You can't play yourself", "You can't play yourself")
     = f.label :'Player_1'
     = f.select(:player_1_id, Player.pluck(:name, :id))
     br
