@@ -1,7 +1,7 @@
 class PlayerMatchesController < ApplicationController
   before_action :set_player, only: [:index]
   def index
-      @matches = Match.where("player_1_id = ? OR  player_2_id = ?" , @player, @player)
+      @matches = Match.where("player_1_id = ? OR  player_2_id = ?" , @player, @player).order(created_at: :desc)
   end
 
   private
