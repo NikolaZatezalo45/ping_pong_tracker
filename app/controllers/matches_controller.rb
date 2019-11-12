@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :destroy]
 
   def index
-    @matches = Match.all
+    @matches = Match.all.order(created_at: :desc)
   end
 
   def new
