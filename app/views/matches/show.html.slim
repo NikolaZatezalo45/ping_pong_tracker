@@ -6,7 +6,8 @@ h3 ="Winner : #{@match.winner.name}"
 
 .actions
   h3 = button_to( "Home", players_path, :method => :get)
-=link_to "back", :back
+  / h3 = button_to( "Edit",  edit_match_path(@match), :method => :get)
+  h3 = button_to('Delete',match_path(@match), data: { confirm: 'Are you sure?' },:method => :delete)
 
 
 
